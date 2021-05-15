@@ -13,7 +13,10 @@ const tagManagerArgs = {
   gtmId: process.env.GTM
 }
 
-TagManager.initialize(tagManagerArgs)
+if(process.browser) {
+  TagManager.initialize(tagManagerArgs) 
+}
+
 
 const Index = () => {
 
