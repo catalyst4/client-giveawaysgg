@@ -26,7 +26,7 @@ export const Header = ({ type, homepage }) => {
         >
             {mobile ? (
                 <>
-                    <img src="/img/bg.jpg" className="opacity-50" />
+                    <img src="/img/bg.jpg" className="opacity-100" />
                     <div 
                         style={{background: 'linear-gradient(to right, rgb(18, 18, 18), rgba(18, 18, 18,0.5))'}}
                         className="absolute w-full h-full p-5 flex flex-col justify-evenly"
@@ -53,7 +53,7 @@ export const Header = ({ type, homepage }) => {
                 </>
             ) : (
             <>
-                <div className="order-1 flex items-center w-full h-full p-10">
+                <div className="order-1 w-full h-full p-10">
                     <div>
                         <img src="/img/fortnite.png" className="w-28 mb-3" />
                         <h1 className="text-3xl font-bold">{type.name}</h1> 
@@ -73,8 +73,8 @@ export const Header = ({ type, homepage }) => {
                     </div>
                 </div>
                 <div className="relative order-2 w-full flex justify-center items-center">
-                    <img src="/img/bg.jpg" />
-                    <div style={{background: 'linear-gradient(to right, #121212, rgba(18, 18, 18,0.75))'}} className="absolute w-full h-full flex justify-center items-center">
+                    <img src="/img/bg.jpg" className="w-full opacity-" />
+                    <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div>
                             <h5 className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">Time Remaining:</h5>
                             <h3 className="text-3xl font-semibold">{formatted}</h3>
