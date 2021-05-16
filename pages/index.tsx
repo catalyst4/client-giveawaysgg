@@ -10,7 +10,7 @@ import { getGiveaways } from '../redux/actions/giveawayActions'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-  gtmId: process.env.GTM
+  gtmId: process.env.NEXT_PUBLIC_GTM
 }
 
 if(process.browser) {
