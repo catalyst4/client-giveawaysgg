@@ -21,8 +21,8 @@ export const Header = ({ type, homepage }) => {
 
     return (
         <div
-        style={{background: '#121212'}}
-        className="w-full sm:h-full lg:h-48 relative mb-5 flex justify-center items-center overflow-hidden rounded-2xl shadow-2xl hover:border-2 hover:border-purple-700"
+            style={{background: '#121212'}}
+            className="w-full sm:h-full lg:h-48 relative mb-5 flex justify-center items-center overflow-hidden rounded-2xl shadow-2xl hover:border-2 hover:border-purple-700"
         >
             {mobile ? (
                 <>

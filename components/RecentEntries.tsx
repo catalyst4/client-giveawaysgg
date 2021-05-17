@@ -21,7 +21,7 @@ export const RecentEntries = ({ giveaway }) => {
                 <SecHeading>Recent Entries</SecHeading>   
                 <div className="flex items-center text-sm italic opacity-80">
                     <ClockIcon className="w-4 h-4 mr-1" />
-                    <span>Updated 5m ago</span>
+                    <span>Updates every minute</span>
                 </div>
             </div>
             
@@ -52,7 +52,7 @@ export const RecentEntries = ({ giveaway }) => {
                     )}
                     
                 </div>
-                {entries?.length > 0 && (
+                {/* {entries?.length > 0 && (
                 <div className="p-5">
                     <Link href={`${giveaway.slug}/entries`}>
                         <button
@@ -63,7 +63,7 @@ export const RecentEntries = ({ giveaway }) => {
                         </button> 
                     </Link>    
                 </div>    
-                )}
+                )} */}
             </div>
             
         </div>

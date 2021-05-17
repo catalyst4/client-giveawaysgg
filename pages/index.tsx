@@ -8,6 +8,7 @@ import { Header } from '../components/Header'
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { getGiveaways } from '../redux/actions/giveawayActions'
 import TagManager from 'react-gtm-module'
+import { Announcement } from '../components/Announcement'
 
 const tagManagerArgs = {
   gtmId: process.env.NEXT_PUBLIC_GTM
@@ -49,16 +50,30 @@ const Index = () => {
         <meta name="theme-color" content="#7C3AED" />
       </Head>
       <Navbar />
-      <div className="container mx-auto mt-10 px-4">
+      <Announcement />
+      <div className="container mx-auto px-4 lg:px-0">
         {loading ? (
           <div>loading</div>
         ) : error ? (
           <div>error</div>
         ) : types ? (
           <div>
-            {types?.map(type => (
-              <Header homepage={true} type={type} key={type.type} />
-            ))}
+            {types?.find(type => type.frequency === 'daily') && (
+              <>
+                <h3 className="uppercase text-purple-600 font-bold tracking-wider">Daily</h3>
+                {types?.filter(type => type.frequency === 'daily').map(type => (
+                  <Header homepage={true} type={type} key={type.type} />
+                ))}  
+              </>
+            )}
+            {types?.find(type => type.frequency === 'weekly') && (
+              <>
+                <h3 className="uppercase text-purple-600 font-bold tracking-wider">Weekly</h3>
+                {types?.filter(type => type.frequency === 'weekly').map(type => (
+                  <Header homepage={true} type={type} key={type.type} />
+                ))}  
+              </>
+            )}
           </div>
         ) : ''}
       </div>
