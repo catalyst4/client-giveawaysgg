@@ -1,3 +1,4 @@
+import { EmojiSadIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { SecHeading } from './SecHeading'
 
@@ -10,6 +11,14 @@ export const PreviousWinners = ({ winners }) => {
                 {winners?.map((winner, i) => (
                     <Item key={i} winner={winner} />    
                 ))}
+                {winners?.length < 1 && (
+                    <div style={{background: '#121212'}} className="aspect-w-16 aspect-h-9 rounded-md shadow-lg">
+                        <div className="w-full h-full flex flex-col justify-center items-center">
+                            <EmojiSadIcon className="w-7 h-7 mb-2 text-purple-500" />
+                            <span className="font-medium">No winners yet</span>  
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
@@ -17,7 +26,7 @@ export const PreviousWinners = ({ winners }) => {
 
 const Item = ({ winner }) => {
     return (
-        <div style={{background: '#121212'}} className="p-2 rounded-md">
+        <div style={{background: '#121212'}} className="p-2 rounded-md shadow-lg">
             <div className="aspect-w-16 aspect-h-9">
                 {winner.link ? (
                     <iframe 
