@@ -60,7 +60,10 @@ const Index = () => {
           <div>
             {types?.find(type => type.frequency === 'daily') && (
               <>
-                <h3 className="uppercase text-purple-600 font-bold tracking-wider">Daily</h3>
+                <div className="flex items-center mb-3">
+                  <h3 className="uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">Daily</h3>  
+                  <div className="w-full h-1 bg-purple-600 bg-opacity-10 rounded-lg"></div>
+                </div>
                 {types?.filter(type => type.frequency === 'daily').map(type => (
                   <Header homepage={true} type={type} key={type.type} />
                 ))}  
@@ -68,8 +71,10 @@ const Index = () => {
             )}
             {types?.find(type => type.frequency === 'weekly') && (
               <>
-                <h3 className="uppercase text-purple-600 font-bold tracking-wider">Weekly</h3>
-                {types?.filter(type => type.frequency === 'weekly').map(type => (
+                <div className="flex items-center mb-3">
+                  <h3 className="uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">Weekly</h3>  
+                  <div className="w-full h-1 bg-purple-600 bg-opacity-10 rounded-lg"></div>
+                </div>                {types?.filter(type => type.frequency === 'weekly').map(type => (
                   <Header homepage={true} type={type} key={type.type} />
                 ))}  
               </>
