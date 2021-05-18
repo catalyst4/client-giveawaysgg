@@ -15,6 +15,8 @@ export const newEntry = (body, id) => async (dispatch) => {
             payload: data
         })
 
+        console.log(id)
+
         const cooldownObj = { id, cooldown: data.cooldown }
         const cooldowns = JSON.parse(localStorage.getItem('cooldowns'))
 
