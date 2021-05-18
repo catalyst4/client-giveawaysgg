@@ -4,7 +4,7 @@ import React from 'react'
 
 export const Announcement = () => {
     return (
-        <div className="container mx-auto px-4 lg:px-0 my-5">
+        <div className="container mx-auto px-4 lg:px-0 py-5">
             <div style={{background: '#121212'}} className="w-full px-2 lg:px-5 py-2 bg-opacity-20 rounded-lg text-md flex flex-col lg:flex-row justify-between items-center">
                 <div className="text-center lg:text-left">What other games should we do giveaways for?</div>
                 <Link href="https://strawpoll.com/u9e47qefx">
