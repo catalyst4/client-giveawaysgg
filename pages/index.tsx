@@ -50,7 +50,7 @@ const Index = () => {
         <meta name="theme-color" content="#7C3AED" />
       </Head>
       <Navbar />
-      {/* <Announcement /> */}
+      <Announcement />
       <div className="container mx-auto px-4 lg:px-0 mt-10">
         {loading ? (
           <div>loading</div>
