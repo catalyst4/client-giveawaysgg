@@ -52,7 +52,7 @@ const Index = () => {
       <Navbar />
       <div className="container mx-auto px-4 lg:px-0 mt-5">
         <Announcement />
-        {!loading ? (
+        {loading ? (
           <div>
             <div className="animate-pulse mb-4">
               <div style={{background: '#202020'}} className="w-1/3 h-6 mb-2 rounded-lg"></div>
