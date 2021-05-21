@@ -54,7 +54,7 @@ export const Header = ({ type, homepage }) => {
             ) : (
             <>
                 <div className="order-1 w-full h-full p-10">
-                    <div>
+                    <div className="flex h-full flex-col justify-center">
                         <img src="/img/fortnite.png" className="w-28 mb-3" />
                         <h1 className="text-3xl font-bold">{type.name}</h1> 
                         {homepage && (
