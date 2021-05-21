@@ -52,8 +52,40 @@ const Index = () => {
       <Navbar />
       <div className="container mx-auto px-4 lg:px-0 mt-5">
         <Announcement />
-        {loading ? (
-          <div>loading</div>
+        {!loading ? (
+          <div>
+            <div className="animate-pulse mb-4">
+              <div style={{background: '#202020'}} className="w-1/3 h-6 mb-2 rounded-lg"></div>
+              <div 
+                style={{background: '#121212'}}
+                className="w-full rounded-lg p-5"
+              >
+                <div style={{background: '#202020'}} className="w-1/3 mb-3 h-8 rounded-md"></div>
+                <div style={{background: '#202020'}} className="w-full mb-2 h-10 rounded-md"></div>
+                <div style={{background: '#202020'}} className="w-1/2 h-4 mb-4 rounded-md"></div>
+                <div className="flex justify-between items-center">
+                  <div style={{background: '#202020'}} className="w-1/2 h-8 rounded-md"></div>
+                  <div style={{background: '#202020'}} className="w-1/3 h-8 rounded-md"></div>
+                </div>
+              </div>
+            </div>  
+            <div className="animate-pulse">
+              <div style={{background: '#202020'}} className="w-1/3 h-6 mb-2 rounded-lg"></div>
+              <div 
+                style={{background: '#121212'}}
+                className="w-full rounded-lg p-5"
+              >
+                <div style={{background: '#202020'}} className="w-1/3 mb-3 h-8 rounded-md"></div>
+                <div style={{background: '#202020'}} className="w-full mb-2 h-10 rounded-md"></div>
+                <div style={{background: '#202020'}} className="w-1/2 h-4 mb-4 rounded-md"></div>
+                <div className="flex justify-between items-center">
+                  <div style={{background: '#202020'}} className="w-1/2 h-8 rounded-md"></div>
+                  <div style={{background: '#202020'}} className="w-1/3 h-8 rounded-md"></div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          
         ) : error ? (
           <div>error</div>
         ) : types ? (

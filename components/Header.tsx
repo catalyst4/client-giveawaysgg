@@ -76,7 +76,7 @@ export const Header = ({ type, homepage }) => {
                     <img src="/img/bg.jpg" className="w-full opacity-" />
                     <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div>
-                            <h5 className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">Time Remaining:</h5>
+                            <h5 className="text-md uppercase font-bold tracking-wider text-purple-500 text-center mb-1">Time Remaining:</h5>
                             <h3 className="text-3xl font-semibold">{formatted}</h3>
                         </div>
                     </div>  
