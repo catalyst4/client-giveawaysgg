@@ -7,17 +7,7 @@ import Link from 'next/link'
 import { Header } from '../components/Header'
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { getGiveaways } from '../redux/actions/giveawayActions'
-import TagManager from 'react-gtm-module'
 import { Announcement } from '../components/Announcement'
-
-const tagManagerArgs = {
-  gtmId: process.env.NEXT_PUBLIC_GTM
-}
-
-if(process.browser) {
-  TagManager.initialize(tagManagerArgs) 
-}
-
 
 const Index = () => {
 

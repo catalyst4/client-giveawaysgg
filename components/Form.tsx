@@ -22,7 +22,6 @@ export const Form = ({ giveaway }) => {
 
     const onCooldown = () => {
         const cooldowns = JSON.parse(localStorage.getItem('cooldowns'))
-        console.log(cooldowns)
         const cooldown = cooldowns?.find(cooldown => cooldown.id === giveaway.id)
         if(parseInt(cooldown?.cooldown) > Date.now()) {
             return true
@@ -32,17 +31,14 @@ export const Form = ({ giveaway }) => {
     }
 
     useEffect(() => {
-        console.log('hi')
         if(username) {
             setValid(true)
         } else {
             setValid(false)
         }
         if(onCooldown()) {
-            console.log('hello')
             setSubmit(true)
         } else {
-            console.log('ight')
             setSubmit(false)
         }
     }, [username])
