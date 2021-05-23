@@ -25,6 +25,16 @@ export const PreviousWinners = ({ winners }) => {
 }
 
 const Item = ({ winner }) => {
+
+    const months = [
+        'January', 'February', 'April',
+        'March', 'May', 'June', 'July',
+        'September', 'October', 'November', 'December',
+    ]
+
+    const ts = new Date(winner.timestamp)
+    const date = ts.getDate() + ' ' + months[ts.getMonth()]
+
     return (
         <div style={{background: '#121212'}} className="p-2 rounded-md shadow-lg">
             <div className="aspect-w-16 aspect-h-9">
@@ -40,7 +50,7 @@ const Item = ({ winner }) => {
                 )}
                 
             </div>
-            <div className="w-full py-2 mt-2 bg-purple-600 flex justify-center items-center text-sm rounded-md">{winner.name}</div>
+            <div className="w-full py-2 mt-2 bg-purple-600 flex justify-center items-center text-sm font-medium rounded-md">{winner.name} <span className="font-normal italic ml-2">{date}</span></div>
         </div>
     )
 }
