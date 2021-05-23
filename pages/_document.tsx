@@ -24,7 +24,7 @@ class MyDocument extends Document {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){window.dataLayer.push(arguments)}
                   gtag("js", new Date());
-                  gtag("config", "<%your code here%>");
+                  gtag("config", ${process.env.NEXT_PUBLIC_GTM});
               `}
           }>
           </script>
