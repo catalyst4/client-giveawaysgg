@@ -76,7 +76,7 @@ export const Header = ({ type, homepage }) => {
                     <img src="/img/bg.jpg" alt="Background of giveaway" className="w-full" />
                     <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div className="flex flex-col">
-                            <span className="text-md uppercase font-bold tracking-wider text-purple-500 text-center mb-1">Time Remaining:</span>
+                            <span className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">Time Remaining:</span>
                             <span className="text-3xl font-semibold">{formatted}</span>
                         </div>
                     </div>  
