@@ -26,18 +26,18 @@ export const Header = ({ type, homepage }) => {
         >
             {mobile ? (
                 <>
-                    <img src="/img/bg.jpg" className="opacity-100" />
+                    <img src="/img/bg.jpg" alt="Background of giveaway" />
                     <div 
                         style={{background: 'linear-gradient(to right, rgb(18, 18, 18), rgba(18, 18, 18,0.5))'}}
                         className="absolute w-full h-full p-5 flex flex-col justify-evenly"
                     >
                         <div>
-                            <img src="/img/fortnite.png" className="w-20 mb-3" />
+                            <img src="/img/fortnite.png" alt="Fortnite logo" className="w-20 mb-3" />
                             <h1 className="text-2xl font-bold">{type.name}</h1> 
                             <div className="uppercase text-sm font-semibold tracking-wider opacity-50">5 Hourly Entries</div>    
                         </div>
                         <div className=" flex justify-between items-center">
-                            <h3 className="text-xl font-medium">{formatted}</h3>
+                            <span className="text-xl font-medium">{formatted}</span>
                             {homepage && (
                                 <Link href={type.slug}>
                                     <button 
@@ -55,7 +55,7 @@ export const Header = ({ type, homepage }) => {
             <>
                 <div className="order-1 w-full h-full p-10">
                     <div className="flex h-full flex-col justify-center">
-                        <img src="/img/fortnite.png" className="w-28 mb-3" />
+                        <img src="/img/fortnite.png" alt="Fortnite logo" className="w-28 mb-3" />
                         <h1 className="text-3xl font-bold">{type.name}</h1> 
                         {homepage && (
                             <div className="flex items-center mt-2">
@@ -73,11 +73,11 @@ export const Header = ({ type, homepage }) => {
                     </div>
                 </div>
                 <div className="relative order-2 w-full flex justify-center items-center">
-                    <img src="/img/bg.jpg" className="w-full opacity-" />
+                    <img src="/img/bg.jpg" alt="Background of giveaway" className="w-full" />
                     <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div>
-                            <h5 className="text-md uppercase font-bold tracking-wider text-purple-500 text-center mb-1">Time Remaining:</h5>
-                            <h3 className="text-3xl font-semibold">{formatted}</h3>
+                            <span className="text-md uppercase font-bold tracking-wider text-purple-500 text-center mb-1">Time Remaining:</span>
+                            <span className="text-3xl font-semibold">{formatted}</span>
                         </div>
                     </div>  
                 </div>

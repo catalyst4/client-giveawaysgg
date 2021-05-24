@@ -80,6 +80,7 @@ export const Form = ({ giveaway }) => {
                             onClick={submitHandler}
                             disabled={!valid}
                             className={`${!valid && 'opacity-10 cursor-not-allowed'} transition w-8 h-8 flex justify-center items-center bg-purple-600 rounded-md`}
+                            aria-label="Enter giveaway"
                         >
                             <ArrowRightIcon className="w-4 h-4" />
                         </button>
