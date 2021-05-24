@@ -8,6 +8,7 @@ import { Header } from '../components/Header'
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { getGiveaways } from '../redux/actions/giveawayActions'
 import { Announcement } from '../components/Announcement'
+import { useRouter } from 'next/router'
 
 const Index = () => {
 
@@ -20,6 +21,10 @@ const Index = () => {
       dispatch(getGiveaways())
     }
   }, [])
+
+  const { locale } = useRouter()
+
+  console.log(locale)
 
   return (
     <div>

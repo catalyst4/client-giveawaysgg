@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <NextScript />
           <script
               async
-              src={`https://www.tagmanager.com/gtag/js?id="GTM-MSTGR9M"`} >
+              src={`https://www.tagmanager.com/gtag/js?id=GTM-MSTGR9M`} >
           </script>
           <script dangerouslySetInnerHTML={
               { __html: `
