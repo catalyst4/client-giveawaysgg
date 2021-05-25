@@ -17,14 +17,14 @@ class MyDocument extends Document {
           <NextScript />
           <script
               async
-              src={`https://www.tagmanager.com/gtag/js?id=GTM-MSTGR9M`} >
+              src="https://www.tagmanager.com/gtag/js?id=G-T0DJGSYJC5" >
           </script>
           <script dangerouslySetInnerHTML={
               { __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){window.dataLayer.push(arguments)}
                   gtag("js", new Date());
-                  gtag("config", "GTM-MSTGR9M");
+                  gtag("config", "G-T0DJGSYJC5");
               `}
           }>
           </script>
