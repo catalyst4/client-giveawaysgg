@@ -42,7 +42,7 @@ export const Form = ({ giveaway }) => {
         } else {
             setSubmit(false)
         }
-    }, [username])
+    }, [giveaway, username])
 
     const dispatch = useDispatch()
 
@@ -99,14 +99,14 @@ export const Form = ({ giveaway }) => {
                     <div className="text-center">
                         <h5 className="text-lg font-semibold mb-2">Thanks For Entering</h5>
                         <span className="block text-sm">You may enter again in <a className="text-purple-500">{formatted}</a> for another 5 entries</span>    
-                        {/* {giveaway.slug === 'fortnite-daily' && (
+                        {giveaway.slug === 'fortnite-daily' && (
                             <Link href="/fortnite-weekly">
                                 <button aria-label="Enter weekly giveaway" className="flex mx-auto items-center px-5 py-2 text-sm font-medium tracking-wide border border-purple-500 rounded-lg mt-3">
                                     <CursorClickIcon className="w-4 h-4 mr-2" />
                                     Enter our weekly giveaway too!
                                 </button>
                             </Link>    
-                        )} */}
+                        )}
                     </div>
                 </div>
             )}

@@ -11,7 +11,7 @@ export const RecentEntries = ({ giveaway }) => {
 
     useEffect(() => {
         dispatch(getRecentEntries(giveaway.id))
-    }, [])
+    }, [giveaway])
 
     const { loading, error, entries } = useSelector((state: RootStateOrAny) => state.entries)
 
