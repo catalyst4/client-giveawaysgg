@@ -1,10 +1,11 @@
-import { ArrowRightIcon, InformationCircleIcon } from '@heroicons/react/solid'
+import { ArrowRightIcon, CursorClickIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import React, { useEffect, useState, useRef } from 'react'
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { countdown } from '../hooks/countdown'
 import { newEntry } from '../redux/actions/entryActions'
 import { SecHeading } from './SecHeading'
 import ReCAPTCHA from 'react-google-recaptcha'
+import Link from 'next/link'
 
 export const Form = ({ giveaway }) => {
     
@@ -97,7 +98,15 @@ export const Form = ({ giveaway }) => {
                 <div style={{background: '#121212'}} className="flex justify-center items-center p-5 rounded-md">
                     <div className="text-center">
                         <h5 className="text-lg font-semibold mb-2">Thanks For Entering</h5>
-                        <span className="text-sm">You may enter again in <a className="text-purple-500">{formatted}</a> for another 5 entries</span>    
+                        <span className="block text-sm">You may enter again in <a className="text-purple-500">{formatted}</a> for another 5 entries</span>    
+                        {giveaway.slug === 'fortnite-daily' && (
+                            <Link href="/fortnite-weekly">
+                                <button aria-label="Enter weekly giveaway" className="flex mx-auto items-center px-5 py-2 text-sm font-medium tracking-wide border border-purple-500 rounded-lg mt-3">
+                                    <CursorClickIcon className="w-4 h-4 mr-2" />
+                                    Enter our weekly giveaway too!
+                                </button>
+                            </Link>    
+                        )}
                     </div>
                 </div>
             )}
