@@ -2,14 +2,11 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
-import TagManager from 'react-gtm-module'
-
-const tagManagerArgs = {
-  gtmId: 'GTM-MSTGR9M'
-}
+import ReactGA from 'react-ga'
 
 if(process.browser) {
-  TagManager.initialize(tagManagerArgs)
+  ReactGA.initialize('UA-197115196-1')
+  ReactGA.pageview(window.location.pathname + window.location.search)  
 }
 
 function MyApp({ Component, pageProps }) {
