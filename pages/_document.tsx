@@ -15,19 +15,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-              async
-              src="https://www.tagmanager.com/gtag/js?id=G-T0DJGSYJC5" >
-          </script>
-          <script dangerouslySetInnerHTML={
-              { __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){window.dataLayer.push(arguments)}
-                  gtag("js", new Date());
-                  gtag("config", "G-T0DJGSYJC5");
-              `}
-          }>
-          </script>
         </body>
       </Html>
     )

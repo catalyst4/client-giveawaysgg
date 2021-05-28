@@ -2,6 +2,13 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-MSTGR9M'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 function MyApp({ Component, pageProps }) {
   return (
