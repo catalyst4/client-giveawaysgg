@@ -8,7 +8,9 @@ const tagManagerArgs = {
   gtmId: 'GTM-MSTGR9M'
 }
 
-TagManager.initialize(tagManagerArgs)
+if(process.browser) {
+  TagManager.initialize(tagManagerArgs)
+}
 
 function MyApp({ Component, pageProps }) {
   return (
