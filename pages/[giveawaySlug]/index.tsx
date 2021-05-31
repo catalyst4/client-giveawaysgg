@@ -63,7 +63,7 @@ const index = ({ giveaway }) => {
             break
         default:
             lang = en
-  }
+    }
 
     return (
         <div>

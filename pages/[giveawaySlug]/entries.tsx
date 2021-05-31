@@ -1,7 +1,9 @@
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { Header } from '../../components/Header'
 import { Navbar } from '../../components/navbar/Navbar'
+import { de, en, es, fr } from '../../locales/locale'
 import { url } from '../../redux/store'
 
 export async function getServerSideProps(context) {
@@ -29,11 +31,32 @@ export async function getServerSideProps(context) {
 }
 
 const entries = ({ giveaway }) => {
+
+    const { locale } = useRouter()
+
+    let lang = en
+    switch(locale) {
+        case 'en':
+            lang = en
+            break
+        case 'fr':
+            lang = fr
+            break
+        case 'es':
+            lang = es
+            break
+        case 'de':
+            lang = de
+            break
+        default:
+            lang = en
+    }
+
     return (
         <div>
             <Navbar />
             <div className="container mx-auto mt-10">
-                <Header type={giveaway} homepage={false} />
+                <Header lang={lang} type={giveaway} homepage={false} />
                 {giveaway.name}
             </div>
         </div>
