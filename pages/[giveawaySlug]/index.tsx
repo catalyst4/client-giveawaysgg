@@ -9,6 +9,7 @@ import { PreviousWinners } from '../../components/PreviousWinners'
 import axios from 'axios'
 import { url } from '../../redux/store'
 import { useRouter } from 'next/router'
+import { de, en, es, fr } from '../../locales/locale'
 
 export async function getServerSideProps(context) {
 
@@ -44,6 +45,26 @@ const index = ({ giveaway }) => {
         }    
     }
 
+    const { locale } = useRouter()
+
+    let lang = en
+    switch(locale) {
+        case 'en':
+            lang = en
+            break
+        case 'fr':
+            lang = fr
+            break
+        case 'es':
+            lang = es
+            break
+        case 'de':
+            lang = de
+            break
+        default:
+            lang = en
+  }
+
     return (
         <div>
             <Head>
@@ -64,17 +85,17 @@ const index = ({ giveaway }) => {
             </Head>
             <Navbar />
             <div className="container mx-auto mt-10 px-4">
-                <Header type={giveaway} homepage={false} />
+                <Header lang={lang} type={giveaway} homepage={false} />
                 <div className="flex flex-col lg:flex-row justify-between">
                     <div className="w-full mr-5">
-                        <Form giveaway={giveaway} />
-                        <Info />
+                        <Form lang={lang} giveaway={giveaway} />
+                        <Info lang={lang} />
                     </div>
                     <div className="w-full mt-5 lg:mt-0 lg:ml-5">
-                        <RecentEntries giveaway={giveaway} />
+                        <RecentEntries lang={lang} giveaway={giveaway} />
                     </div>
                 </div>
-                <PreviousWinners winners={giveaway.winners} />
+                <PreviousWinners lang={lang} winners={giveaway.winners} />
             </div>
         </div>
     )

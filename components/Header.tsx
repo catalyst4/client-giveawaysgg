@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { countdown } from '../hooks/countdown'
 import { useWindowSize } from '../hooks/useWindowSize'
 
-export const Header = ({ type, homepage }) => {
+export const Header = ({ lang, type, homepage }) => {
 
     let size, mobile
     if(process.browser) {
@@ -34,7 +34,7 @@ export const Header = ({ type, homepage }) => {
                         <div>
                             <img src="/img/fortnite.png" alt="Fortnite logo" className="w-20 mb-3" />
                             <h1 className="text-2xl font-bold">{type.name}</h1> 
-                            <div className="uppercase text-sm font-semibold tracking-wider opacity-50">5 Hourly Entries</div>    
+                            <div className="uppercase text-sm font-semibold tracking-wider opacity-50">5 {lang.hourlyEntries}</div>    
                         </div>
                         <div className=" flex justify-between items-center">
                             <span className="text-xl font-medium">{formatted}</span>
@@ -43,7 +43,7 @@ export const Header = ({ type, homepage }) => {
                                     <button 
                                         className="px-3 py-2 flex items-center bg-purple-600 text-purple-200 uppercase text-xs rounded-md font-semibold"
                                     >
-                                        Enter Now
+                                        {lang.enterBtn}
                                         <ArrowNarrowRightIcon className="w-4 h-4 ml-2" />
                                     </button>
                                 </Link>    
@@ -63,11 +63,11 @@ export const Header = ({ type, homepage }) => {
                                     <button 
                                         className="px-3 py-2 flex items-center bg-purple-600 text-purple-200 uppercase text-xs rounded-md font-semibold"
                                     >
-                                        Enter Now
+                                        {lang.enterBtn}
                                         <ArrowNarrowRightIcon className="w-4 h-4 ml-2" />
                                     </button>
                                 </Link>
-                                <div className="ml-5 uppercase tracking-wider opacity-50">5 Hourly Entries</div>
+                                <div className="ml-5 uppercase tracking-wider opacity-50">5 {lang.hourlyEntries}</div>
                             </div>     
                         )} 
                     </div>
@@ -76,7 +76,7 @@ export const Header = ({ type, homepage }) => {
                     <img src="/img/bg.jpg" alt="Background of giveaway" className="w-full" />
                     <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div className="flex flex-col">
-                            <span className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">Time Remaining:</span>
+                            <span className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">{lang.timeRemaining}:</span>
                             <span className="text-3xl font-semibold">{formatted}</span>
                         </div>
                     </div>  

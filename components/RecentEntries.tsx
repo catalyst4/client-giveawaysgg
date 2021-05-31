@@ -5,7 +5,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { getRecentEntries } from '../redux/actions/entryActions'
 import { SecHeading } from './SecHeading'
 
-export const RecentEntries = ({ giveaway }) => {
+export const RecentEntries = ({ lang, giveaway }) => {
 
     const dispatch = useDispatch()
 
@@ -18,10 +18,10 @@ export const RecentEntries = ({ giveaway }) => {
     return (
         <div>
             <div className="flex justify-between items-center">
-                <SecHeading>Recent Entries</SecHeading>   
+                <SecHeading>{lang.recentEntries}</SecHeading>   
                 <div className="flex items-center text-sm italic opacity-80">
                     <ClockIcon className="w-4 h-4 mr-1" />
-                    <span>Updates every minute</span>
+                    <span>{lang.updatesEveryMin}</span>
                 </div>
             </div>
             
@@ -43,7 +43,7 @@ export const RecentEntries = ({ giveaway }) => {
                                 <div className="p-7 flex justify-center items-center ">
                                     <div className="flex flex-col items-center">
                                         <EmojiSadIcon className="w-7 h-7 mb-2 text-purple-500" />
-                                        <span className="font-medium">No entries yet</span>    
+                                        <span className="font-medium">{lang.noEntries}</span>    
                                     </div>
                                     
                                 </div>

@@ -7,7 +7,7 @@ import { SecHeading } from './SecHeading'
 import ReCAPTCHA from 'react-google-recaptcha'
 import Link from 'next/link'
 
-export const Form = ({ giveaway }) => {
+export const Form = ({ lang, giveaway }) => {
     
     let initialCooldown
     if(process.browser) {
@@ -62,7 +62,7 @@ export const Form = ({ giveaway }) => {
 
     return (
         <div>
-            <SecHeading>Enter for free now</SecHeading>
+            <SecHeading>{lang.enterNowForFree}</SecHeading>
             {!submit ? (
                 <div className="text-center deez">
                     <ReCAPTCHA 
@@ -74,7 +74,7 @@ export const Form = ({ giveaway }) => {
                         <input 
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="Enter your Epic username"
+                            placeholder={lang.enterPlaceholder}
                             className="bg-transparent text-sm w-full focus:outline-none placeholder-gray-300"
                         />
                         <button
@@ -89,7 +89,7 @@ export const Form = ({ giveaway }) => {
                     <div className="w-full mt-1 flex justify-center items-center text-white opacity-50 text-xs lg:text-sm text-center"> 
                         <div className="flex items-center">
                             <InformationCircleIcon className="w-4 h-4 mr-1" />     
-                            <div>Your Epic name is NOT your Xbox/PSN username</div>  
+                            <div>{lang.warningMessage}</div>  
                         </div>
                     </div>    
                 </div>

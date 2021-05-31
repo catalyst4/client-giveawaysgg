@@ -9,6 +9,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux'
 import { getGiveaways } from '../redux/actions/giveawayActions'
 import { Announcement } from '../components/Announcement'
 import { useRouter } from 'next/router'
+import { de, en, es, fr } from '../locales/locale'
 
 const Index = () => {
 
@@ -24,7 +25,23 @@ const Index = () => {
 
   const { locale } = useRouter()
 
-  console.log(locale)
+  let lang = en
+  switch(locale) {
+    case 'en':
+      lang = en
+      break
+    case 'fr':
+      lang = fr
+      break
+    case 'es':
+      lang = es
+      break
+    case 'de':
+      lang = de
+      break
+    default:
+      lang = en
+  }
 
   return (
     <div>
@@ -46,7 +63,7 @@ const Index = () => {
       </Head>
       <Navbar />
       <div className="container mx-auto px-4 lg:px-0 mt-5">
-        <Announcement />
+        <Announcement lang={lang} />
         {loading ? (
           <div>
             <div className="animate-pulse mb-4">
@@ -88,21 +105,21 @@ const Index = () => {
             {types?.find(type => type.frequency === 'daily') && (
               <>
                 <div className="flex items-center mb-3">
-                  <h3 className="uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">Daily</h3>  
+                  <h3 className="w-1/5 uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">{lang.daily}</h3>  
                   <div className="w-full h-1 bg-purple-600 bg-opacity-10 rounded-lg"></div>
                 </div>
                 {types?.filter(type => type.frequency === 'daily').map(type => (
-                  <Header homepage={true} type={type} key={type.type} />
+                  <Header lang={lang} homepage={true} type={type} key={type.type} />
                 ))}  
               </>
             )}
             {types?.find(type => type.frequency === 'weekly') && (
               <>
                 <div className="flex items-center mb-3">
-                  <h3 className="uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">Weekly</h3>  
+                  <h3 className="w-1/5 uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">{lang.weekly}</h3>  
                   <div className="w-full h-1 bg-purple-600 bg-opacity-10 rounded-lg"></div>
                 </div>                {types?.filter(type => type.frequency === 'weekly').map(type => (
-                  <Header homepage={true} type={type} key={type.type} />
+                  <Header lang={lang} homepage={true} type={type} key={type.type} />
                 ))}  
               </>
             )}

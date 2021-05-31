@@ -2,11 +2,11 @@ import { EmojiSadIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { SecHeading } from './SecHeading'
 
-export const PreviousWinners = ({ winners }) => {
+export const PreviousWinners = ({ lang, winners }) => {
 
     return (
         <div className="mt-5">
-            <SecHeading>Previous Winners</SecHeading>
+            <SecHeading>{lang.previousWinners}</SecHeading>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {winners?.map((winner, i) => (
                     <Item key={i} winner={winner} />    
@@ -15,7 +15,7 @@ export const PreviousWinners = ({ winners }) => {
                     <div style={{background: '#121212'}} className="aspect-w-16 aspect-h-9 rounded-md shadow-lg">
                         <div className="w-full h-full flex flex-col justify-center items-center">
                             <EmojiSadIcon className="w-7 h-7 mb-2 text-purple-500" />
-                            <span className="font-medium">No winners yet</span>  
+                            <span className="font-medium">{lang.noWinners}</span>  
                         </div>
                     </div>
                 )}

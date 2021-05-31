@@ -1,13 +1,12 @@
 import { CheckIcon } from '@heroicons/react/solid'
 import React from 'react'
 
-export const Info = () => {
+export const Info = ({ lang }) => {
     return (
         <div style={{background: '#121212'}} className="mt-3 rounded-md divide-y divide-black divide-opacity-50 divide-solid">
-            <Row>The winner is chosen randomly when the countdown expires</Row>
-            <Row>You can enter once every hour to gain more entries</Row>
-            <Row>The more times you enter the higher your chances of winning</Row>
-            <Row>Prizes will be gifted in-game by "GiveawaysGG" on Fortnite</Row>
+            {lang.info.map((info, i) => (
+                <Row key={i}>{info}</Row>
+            ))}
         </div>
     )
 }
