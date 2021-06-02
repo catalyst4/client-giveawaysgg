@@ -25,7 +25,7 @@ export const en: Locale = {
     voteHere: 'Vote here',
     daily: 'Daily',
     weekly: 'Weekly',
-    enterBtn: 'Enter now for free',
+    enterBtn: 'Enter now',
     timeRemaining: 'Time Remaining',
     hourlyEntries: 'Hourly Entries',
     enterNowForFree: 'Enter now for free',
