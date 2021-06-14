@@ -26,7 +26,7 @@ export const Header = ({ lang, type, homepage }) => {
         >
             {mobile ? (
                 <>
-                    <img src="/img/bg.jpg" alt="Background of giveaway" />
+                    <img src="/img/bg.png" alt="Background of giveaway" />
                     <div 
                         style={{background: 'linear-gradient(to right, rgb(18, 18, 18), rgba(18, 18, 18,0.5))'}}
                         className="absolute w-full h-full p-5 flex flex-col justify-evenly"
@@ -73,8 +73,8 @@ export const Header = ({ lang, type, homepage }) => {
                     </div>
                 </div>
                 <div className="relative order-2 w-full flex justify-center items-center">
-                    <img src="/img/bg.jpg" alt="Background of giveaway" className="w-full" />
-                    <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.85))'}} className="absolute w-full h-full flex justify-center items-center">
+                    <img src="/img/bg.png" alt="Background of giveaway" className="w-full" />
+                    <div style={{background: 'linear-gradient(to right, #121212 , rgba(18, 18, 18,0.65))'}} className="absolute w-full h-full flex justify-center items-center">
                         <div className="flex flex-col">
                             <span className="text-md uppercase font-bold tracking-wider text-purple-600 text-center mb-1">{lang.timeRemaining}:</span>
                             <span className="text-3xl font-semibold">{formatted}</span>
