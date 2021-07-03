@@ -43,6 +43,24 @@ const Index = () => {
       lang = en
   }
 
+  const csGiveaways = [
+    {
+      name: 'Win a $1.25m Shark Card',
+      logo: '/img/gta.png',
+      background: '/img/gtabg.jpg',
+    },
+    {
+      name: 'Rocket League Giveaway',
+      logo: '/img/rocketleague.png',
+      background: '/img/rocketleaguebg.jpg',
+    },
+    {
+      name: 'Win 2,200 Fifa Points',
+      logo: '/img/fifa.png',
+      background: '/img/fifabg.jpg',
+    },
+  ]
+
   return (
     <div>
       <Head>
@@ -123,7 +141,10 @@ const Index = () => {
                 ))}  
               </>
             )}
-          </div>
+            {csGiveaways.map((type, i) => {
+              return <Header lang={lang} homepage={true} comingSoon={true} type={type} key={i} />
+            })}
+            </div>
         ) : ''}
       </div>
     </div>
