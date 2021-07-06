@@ -126,12 +126,12 @@ const Index = () => {
                   <h3 className="w-1/5 uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">{lang.daily}</h3>  
                   <div className="w-full h-1 bg-purple-600 bg-opacity-10 rounded-lg"></div>
                 </div>
-                {types?.filter(type => type.frequency === 'daily').map(type => (
+                {types?.filter(type => type.frequency === 'daily' && type.active === true).map(type => (
                   <Header lang={lang} homepage={true} type={type} key={type.type} />
                 ))}  
               </>
             )}
-            {types?.find(type => type.frequency === 'weekly') && (
+            {types?.find(type => type.frequency === 'weekly' && type.active === true) && (
               <>
                 <div className="flex items-center mb-3">
                   <h3 className="w-1/5 uppercase text-purple-600 font-bold text-lg tracking-wider mr-5">{lang.weekly}</h3>  
