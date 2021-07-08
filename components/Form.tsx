@@ -74,7 +74,7 @@ export const Form = ({ lang, giveaway }) => {
                         <input 
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder={lang.enterPlaceholder}
+                            placeholder={giveaway.isEmail ? 'Enter username' : lang.enterPlaceholder}
                             className="bg-transparent text-sm w-full focus:outline-none placeholder-gray-300"
                         />
                         <button
@@ -89,7 +89,7 @@ export const Form = ({ lang, giveaway }) => {
                     <div className="w-full mt-1 flex justify-center items-center text-white opacity-50 text-xs lg:text-sm text-center"> 
                         <div className="flex items-center">
                             <InformationCircleIcon className="w-4 h-4 mr-1" />     
-                            <div>{lang.warningMessage}</div>  
+                            <div>{!giveaway.isEmail && lang.warningMessage}</div>  
                         </div>
                     </div>    
                 </div>
@@ -99,8 +99,8 @@ export const Form = ({ lang, giveaway }) => {
                     <div className="text-center">
                         <h5 className="text-lg font-semibold mb-2">Thanks For Entering</h5>
                         <span className="block text-sm">You may enter again in <a className="text-purple-500">{formatted}</a> for another 5 entries</span>    
-                        {giveaway.slug === 'fortnite-daily' && (
-                            <Link href="/fortnite-weekly">
+                        {giveaway.active === true && (
+                            <Link href="/win-3-x-free-fortnite-skins">
                                 <button aria-label="Enter weekly giveaway" className="flex mx-auto items-center px-5 py-2 text-sm font-medium tracking-wide border border-purple-500 rounded-lg mt-3">
                                     <CursorClickIcon className="w-4 h-4 mr-2" />
                                     Enter our weekly giveaway too!
