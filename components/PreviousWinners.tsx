@@ -43,6 +43,7 @@ const Item = ({ winner }) => {
                         src={winner.link} 
                         title={winner.name} 
                         frameBorder="0" 
+                        loading="lazy"
                         className="rounded-md"
                     />
                 ) : (
